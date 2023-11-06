@@ -29,7 +29,11 @@ const showArtists = (data) => {
       div.innerHTML = `<div class="image-container">
       <div class="image-container-inner">
       <img
-      src="${artist.strArtistThumb}"
+      src="${
+        artist.strArtistThumb
+          ? artist.strArtistThumb
+          : "https://images.macrumors.com/t/vMbr05RQ60tz7V_zS5UEO9SbGR0=/1600x900/smart/article-new/2018/05/apple-music-note.jpg"
+      }"
       alt=""
       />
     </div>
@@ -41,7 +45,9 @@ const showArtists = (data) => {
     </div>
     <button class="album-button">
     <i class="fa-solid fa-compact-disc"></i>
-    <p onclick="fetchAlbums('${artist.idArtist}')" class="button-title">Albums</p>
+    <p onclick="fetchAlbums('${
+      artist.idArtist
+    }')" class="button-title">Albums</p>
   </button>`;
       artistContainer.appendChild(div);
     });
@@ -67,7 +73,11 @@ const showAlbum = (data) => {
     div.innerHTML = `
         <div class="album-image-container">
           <img
-            src="${item.strAlbumThumb}"
+            src="${
+              item.strAlbumThumb
+                ? item.strAlbumThumb
+                : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+            }"
             alt=""
           />
         </div>
